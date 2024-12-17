@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    background-color: hsl(217, 54%, 11%);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem auto; 
+    border: 2px solid hsl(216, 50%, 16%); 
+    border-radius: 10px;
+    max-width: 300px;
+    padding: 1rem;
+    background-color: hsl(216, 50%, 16%);
+}
+.image-equilibrium {
+    height: 270px; 
+    border-radius: 10px;
+    
+}
+h2 {
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.description {
+    color: hsl(215, 51%, 70%);
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+.price {
+    display: flex;
+    justify-content: space-between;
+} 
+.price img {
+    margin-right: 3px;
+}
+.product {
+    color: hsl(178, 100%, 50%);
+}
+.duration {
+    color: hsl(215, 51%, 70%);
+    margin-right: 20px;
+}
+hr {
+    width: 250px;
+    border: 1px solid hsl(215, 32%, 27%);
+    margin-bottom: 1rem;
+}
+.image-avatar {
+    width: 30px;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+}
+.author {
+    display: flex;
+    gap: 1rem;
+}
+.author-description {
+    color: hsl(215, 51%, 70%);
+    display: flex;
+    gap: 10px;
+}
+.author-name {
+    color: hsl(0, 0%, 100%);
+}
+h2:hover,
+.author-name:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+.image {
+    display: block;
+    position: relative;
+}
+
+.image::before, .image::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+} 
+
+.image::before { /* cyan */ 
+    background-color: hsl(178, 100%, 50%);
+    border-radius: 16px;
+    left: 0;
+}
+
+.image::after { 
+    background-image: url(icon-view.svg);
+    background-repeat: no-repeat;
+    background-size: 15%;
+    height: 60%;
+    top: 41%;
+    left: 43%;
+    transition: opacity 1.5s;
+}  
+
+.image:hover::before { /* pseudo class comes first */ 
+    opacity: 0.7;
+} 
+
+.image:hover::after {
+    opacity: 1;
+    cursor: pointer;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 300;
+}
+footer a {
+    color: #8a2be2;
+}
